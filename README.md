@@ -1,5 +1,5 @@
 # patient no show prediction
-there is 3 folders , one for the data analysis with the data thaw was loaded from kaggle,
+there is 3 folders , one for the data analysis with the data thaw was loaded from kaggle,i used graphes from plotly so maybe some of the plotly graphs will not appear.
 the second one is for machine learning with the cleaned data .
 
 
