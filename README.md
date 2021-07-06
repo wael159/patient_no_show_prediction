@@ -1,8 +1,8 @@
 # Patient no show prediction 🏥
 
-![image](https://drive.google.com/uc?export=view&id=1PyvXb_SgQaS1CHQdnbEvBHPyjr1QWLuU)
+<--![image](https://drive.google.com/uc?export=view&id=1PyvXb_SgQaS1CHQdnbEvBHPyjr1QWLuU)-->
 
-
+<img src="https://drive.google.com/uc?export=view&id=1PyvXb_SgQaS1CHQdnbEvBHPyjr1QWLuU" width="100" height="100">
 [Presentaion link ](https://onedrive.live.com/embed?cid=9A8C4DAF1CCF33DC&amp;resid=9A8C4DAF1CCF33DC%21989&amp;authkey=AIRbEZHYmCqIjqw&amp;em=2&amp;wdAr=1.7777777777777777)<br> 
 [Summary video 📽️](https://www.youtube.com/watch?v=cFBWBBx65Lw) 
 
