@@ -22,9 +22,9 @@ The data was derived from 62k patients , from 81 neighborhoods.<br>
 -	**Appointment information**: schedule date (with the time) and appointment date(without the time).
 -	**Location of the clinic** : neighborhood of the clinic .
 -	**Target**: show or no show 
--	
 
 
-
+### Note
+---
 ⚠️ Note: *there is 2 folders , one for the data analysis with the data which was loaded from kaggle,i used graphes from plotly so maybe some of the plotly graphs will not appear.
 the second one is for machine learning with the cleaned data* .
