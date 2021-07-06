@@ -6,9 +6,9 @@
 <iframe src="https://onedrive.live.com/embed?cid=9A8C4DAF1CCF33DC&amp;resid=9A8C4DAF1CCF33DC%21989&amp;authkey=AIRbEZHYmCqIjqw&amp;em=2&amp;wdAr=1.7777777777777777" width="350px" height="221px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
 
 
-<iframe src='https://view.officeapps.live.com/op/view.aspx?src=[https://onedrive.live.com/embed?cid=9A8C4DAF1CCF33DC&amp;resid=9A8C4DAF1CCF33DC%21989&amp;authkey=AIRbEZHYmCqIjqw&amp;em=2&amp;wdAr=1.7777777777777777]' width='100%' height='600px' frameborder='0'>
-
 [Summary video 📽️](https://www.youtube.com/watch?v=cFBWBBx65Lw) 
+
+<iframe height="375" width="600" src="https://www.youtube.com/watch?v=cFBWBBx65Lw"></iframe>
 
 ### Project goal 🎯
 ---
