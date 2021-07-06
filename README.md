@@ -2,7 +2,8 @@
 
 ![image](https://drive.google.com/uc?export=view&id=1PyvXb_SgQaS1CHQdnbEvBHPyjr1QWLuU)
 
-https://www.youtube.com/watch?v=cFBWBBx65Lw
+[Summary video 📽️](https://www.youtube.com/watch?v=cFBWBBx65Lw) 
+
 ### Project goal 🎯
 ---
 20% of the patients missed their appointment without a cancellation, and these is very costly to healthcare institutions ,
