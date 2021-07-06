@@ -10,7 +10,7 @@ the goal of these project is to try to predict if the patient will miss their ap
 
 
 ### Overview
-
+---
 The [Kaggle](https://www.kaggle.com/joniarroba/noshowappointments)  dataset comprised 110k appointments records from public healthcare institutions in a Brazilian city. 
 The appointments occurred across a 6-week period in 2016 (27 days ). 
 The appointments occurred from 29.4.2016  to 08.06.2016 . the scheduled visits starts  from 10.11.2015 to 8.6.2016.
