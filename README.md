@@ -1,6 +1,4 @@
 # patient no show prediction
-there is 2 folders , one for the data analysis with the data which was loaded from kaggle,i used graphes from plotly so maybe some of the plotly graphs will not appear.
-the second one is for machine learning with the cleaned data .
 
 ![image](https://drive.google.com/uc?export=view&id=1PyvXb_SgQaS1CHQdnbEvBHPyjr1QWLuU)
 
@@ -22,3 +20,6 @@ The data consists of the following:
 
 20% of the patients missed their appointment without a cancellation, and these is very costly to healthcare institutions ,
 the goal of these project is to try to predict if the patient will miss their appointment or not , and to know what is the reasons for no shows.
+
+⚠️ Note: *there is 2 folders , one for the data analysis with the data which was loaded from kaggle,i used graphes from plotly so maybe some of the plotly graphs will not appear.
+the second one is for machine learning with the cleaned data* .
