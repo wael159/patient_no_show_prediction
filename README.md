@@ -1,6 +1,7 @@
 # Patient no show prediction 🏥
 
 ![image](https://drive.google.com/uc?export=view&id=1PyvXb_SgQaS1CHQdnbEvBHPyjr1QWLuU)
+<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=[https://1drv.ms/p/s!AtwzzxyvTYyah13TuKAO-rI26kaD?e=7UgO9h]' width='100%' height='600px' frameborder='0'>
 
 [Summary video 📽️](https://www.youtube.com/watch?v=cFBWBBx65Lw) 
 
