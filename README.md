@@ -7,6 +7,7 @@
 20% of the patients missed their appointment without a cancellation, and these is very costly to healthcare institutions ,
 the goal of these project is to try to predict if the patient will miss their appointment or not , and to know what is the reasons for no shows.<br>
 **Bussienss goal** : save money💸 and reduce no shows
+---
 
 ### Overview
 
