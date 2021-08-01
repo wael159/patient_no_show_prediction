@@ -96,6 +96,55 @@ We can also see an outlier -one of the females is 115 years old; I removed this 
 ![image](https://drive.google.com/uc?export=view&id=1_KHGikBgHSJICANylNrlXXzzVv_rkqbL)<br>
 **Figure 5 :**
 **A-** 23.8% of patients have at least one disease, **B-** 63.0% have hypertension, 22.7% with diabetes, 7.8% with alcoholism, and a 6.5% handicap.
-**C-** We can see many no-shows from alcoholic females, so maybe we must also remind them or call them.
+**C-** We can see many no-shows from alcoholic females, so maybe we must also remind them or call them.<br><br>
+
+**Patients distribution by background disease**
 
 
+![image](https://drive.google.com/uc?export=view&id=1_KHGikBgHSJICANylNrlXXzzVv_rkqbL)<br>
+
+**Figure 6 :**
+**A-** 23.8% of patients have at least one disease, **B-** 63.0% have hypertension, 22.7% with diabetes, 7.8% with alcoholism, and a 6.5% handicap.
+**C-** We can see many no-shows from alcoholic females, so maybe we must also remind them or call them.<br><br>
+
+**Show vs. no show by clinic location**
+
+![image](https://drive.google.com/uc?export=view&id=183gvDB9TBbRsjkg-85mYfZlNf3yb2ggb)<br>
+
+**Figure 7:** we can see here that there is a high rate of absent patients from some of the neighborhoods like nova Palestina.<br><br>
+
+**Show vs. no show by waiting time.**<br>
+![image](https://drive.google.com/uc?export=view&id=1i1tJ7VFMdLMDEudvCmq2k8INgEtxbtPJ)<br>
+**Figure 8:** the attendance rates of the appointments scheduled for the same day are the highest. The no-showing rate increases as the waiting gets longer. The time that elapses between booking the appointment and the actual appointment is associated with a higher probability of missing the appointment.<br><br>
+
+**Show vs. no-show by receiving SMS or not**
+
+
+![image](https://drive.google.com/uc?export=view&id=1FIK08V7yyx7XXLTI5mGUnx6z741XvefW)<br>
+
+**Figure 8:**
+**1.** SMS rates for people who make the appointment for the same day or within three days are meager - I also saw that the no-show rates are much lower in that time range.
+If we interpret the SMS column as an indication of an SMS being sent, it makes sense that hospitals would have a rule/system to not send SMS to people whose appointments are close to the date the appointment was scheduled.
+**2.** the second graph is for the distribution of absent patients by the waiting time and receiving SMS; we can see that approximately 50% of the absent patients who wait more than four days did not receive SMS.<br><br>
+
+
+**Analyzing the probability of showing up for Age feature**<br>
+
+![image](https://drive.google.com/uc?export=view&id=1r0jJ5b6N5Fck4TPuRZd-7dfGGe56gk5B)<br>
+
+**Figure 9:** we can see here that there is a positive correlation between age and the show rate; older people1r0jJ5b6N5Fck4TPuRZd-7dfGGe56gk5B tend to schedule long-term appointments and attend to them.<br><br>
+
+**Analyzing the probability of showing up for waiting time features**<br>
+![image](https://drive.google.com/uc?export=view&id=17zRG3GtqzI5q4btlmmtwVYr-5V0Qf3bg)<br>
+There is no correlation between the waiting days and the showing up.<br><br>
+
+**Patient by show vs. no show**<br>
+![image](https://drive.google.com/uc?export=view&id=1PIg6eVnbgFJcNJKw3cEMmIgkIm_Ewh6h)<br>
+**Figure 10:**<br>
+- 	(external circle) we can see that approximately 39.1% of the patients have more than one appointment.
+- 	(Inner circle)15.3% of the patients have prior appointments and were absent at least once.
+- 	22.2% of the patients have more than one appointment and did not miss their appointments.
+- 	On the other hand, 1.6% of the patients made more than one appointment, but they missed all the appointments.
+- 	(external circle)60.9% of the patients have no prior appointments.
+- 	49.9% of the patients have no prior appointments and come to their appointments.
+- 	However, 11.4% of the patients have no prior appointments ( make just one appointment) and did not come to their appointments.
