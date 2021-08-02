@@ -132,11 +132,12 @@ If we interpret the SMS column as an indication of an SMS being sent, it makes s
 
 ![image](https://drive.google.com/uc?export=view&id=1r0jJ5b6N5Fck4TPuRZd-7dfGGe56gk5B)<br>
 
-**Figure 9:** we can see here that there is a positive correlation between age and the show rate; older people1r0jJ5b6N5Fck4TPuRZd-7dfGGe56gk5B tend to schedule long-term appointments and attend to them.<br><br>
+
+**Figure 9:** we can see here that there is a positive correlation between age and the show rate; older people tend to schedule long-term appointments and attend to them.<br><br>
 
 **Analyzing the probability of showing up for waiting time features**<br>
 ![image](https://drive.google.com/uc?export=view&id=17zRG3GtqzI5q4btlmmtwVYr-5V0Qf3bg)<br>
-There is no correlation between the waiting days and the showing up.<br><br>
+**Figure 9:** There is no correlation between the waiting days and the showing up.<br><br>
 
 **Patient by show vs. no show**<br>
 ![image](https://drive.google.com/uc?export=view&id=1PIg6eVnbgFJcNJKw3cEMmIgkIm_Ewh6h)<br>
@@ -147,4 +148,104 @@ There is no correlation between the waiting days and the showing up.<br><br>
 - 	On the other hand, 1.6% of the patients made more than one appointment, but they missed all the appointments.
 - 	(external circle)60.9% of the patients have no prior appointments.
 - 	49.9% of the patients have no prior appointments and come to their appointments.
-- 	However, 11.4% of the patients have no prior appointments ( make just one appointment) and did not come to their appointments.
+- 	However, 11.4% of the patients have no prior appointments ( make just one appointment) and did not come to their appointments.<br><br>
+
+**Features correlation**
+
+Before machine learning, we must check if there is a correlation between the features. In the figure below, we can see that there is no high correlation between the features. (with 17 features)<br>
+![image](https://drive.google.com/uc?export=view&id=1HwSkXHRb005xClveg8iKUXxwMe9Fhbj-)<br><br>
+![image](https://drive.google.com/uc?export=view&id=1HwCJpdi-PUO5Via-ge7-iCTXpGqAeVBH-)<br><br>
+---
+
+### Machine learning <br>
+#### Model selection and evaluation <br>
+This is a binary classification problem, so that I will use the classification models. Features like the scheduled day and appointment day were split into the day of the month, month, and day of the week. Patient id, appointment id, and the neighborhood were dropped (because there are 81 neighborhoods and there will be many features, and it may be cause overfitting).
+
+#### Step 1 : <br>
+
+**The dataset was split into 80 % of the appointments, with a 20% test data set.**<br>
+
+![image](https://drive.google.com/uc?export=view&id=1jtv4ASUT_kK4hUsMO0YJOrnZlPCJiUJF)<br><br>
+**Figure 11**:<br>
+Classification reports for the individual classifiers (with the test set), all the classifiers have approximately the same overall accuracy, precision, and recall.<br>
+Using five cross-validation folds, the data was fitted on random forest, logistic regression, KNN, naïve Bayes, and tree classification with their default parameter. Then, the models were evaluated based on their accuracy, precision, recall,f1, and roc AUC score, as shown in figure 11 below.
+The test set data performance with random forest results in a recall of 21% for the absent patients, a precision of 40% with an overall accuracy of 78%, and an f1 score of 0.28 for the no-show class. I tried to improve the results in step 2.<br><br>
+
+
+
+
+**Figure 12**:<br>
+![image](https://drive.google.com/uc?export=view&id=1o7RJyfPNelBRYvc5_uGaKqhkIEAyaU5M)<br><br>
+
+From the results of the different models, we can see the results of precision, recall, f1, accuracy in the train, and validation set (average of 5 fold cross-validation).<br><br>
+### Step 2: Class imbalance <br>
+
+There is a Class Imbalance in the data set; the no-show appointments only represent 20.2% of the response variable, appointment status, as seen in the figure above. So, these classifiers may predict the patient who came to their appointments (0).
+To improve the results of the models, I tried to balance the data, so I used the SMOTE algorithm.
+By utilizing the SMOTE algorithm, "the minority class is over-sampled by creating synthetic examples rather than over-sampling, allowing the classifier to learn the feature/target better.
+When evaluating the test data performance after using the SMOTE on the training data, the f1 score of the no show increased in all the classifiers, but it was still not good.<br><br>
+
+
+![image](https://drive.google.com/uc?export=view&id=13Dwgt1NpldazpKmO003np82guZ_DNWy8)<br><br>
+**Figure 13:** classification reports for the individual classifiers with balanced data(by SMOTE).<br><br>
+
+![image](https://drive.google.com/uc?export=view&id=1o7RJyfPNelBRYvc5_uGaKqhkIEAyaU5M)<br><br>
+**Figure 14:** The results of the different models after data balancing( with SMOTE) show the results of precision, recall, f1, accuracy in the train, and validation set. (Average of 5 cross-validations).<br><br>
+
+### Step 3 :
+In order to improve the results more, I have added two more features for the appointment history of the patient, one of them is for the total prior appointment and the second one is for the total missed appointment. So every time the patient makes a new appointment, the total prior appointment and the total missed appointments will appear beside the patient’s information, and it will be updated when he makes a new appointment.
+Patient id is not a unique feature, so some patients make more than one appointment. I did not remove them. I just updated the total prior appointment, and the total missed an appointment for each patient when he makes a new appointment.
+I also added the total diseases for each patient. There are 20 features now, and the train set is not balanced. It is still 23% no show and 77 % show.
+I checked the accuracy with logistic regression, and I got 94%, precision of 86% for the show; there were also good results from the random forest model, as we can see in Figure (15) <br><br>
+
+![image](https://drive.google.com/uc?export=view&id=1pFpDf0JGz0vk2qSwXT00BP9-2YDZKhzk)<br><br>
+
+
+**Figure 15:** classification reports for the individual classifiers with the test set.<br>
+I checked the accuracy of the train test and the validation set to check if there is overfitting. Unfortunately, there was overfitting in the random forest model, so  I chose the logistic regression model, it has 86% precision,82% recall,f1-score of 84% for the no show label, and 94% accuracy, and there was no overfitting; the results of the train (with five cross-validations) is the same as for the validation set, and there is no overfitting. 
+we can the results of all the metrics in the figure below (average of 5 cross-validations)<br><br>
+
+![image](https://drive.google.com/uc?export=view&id=1zdpW_HGbVlkUGb551Po5AJ9k9LdSS9HC)<br><br>
+
+
+In the figure below, we can see the average validation f1 score with ten cross-validation folds.
+
+![image](https://drive.google.com/uc?export=view&id=1qL1icVQebAl0_zxIfyQSVVN6MOBFCvgn)<br><br>
+
+I also checked the ROC curve, and we can see that we have a good result from the roc graph, as we can see below, with an AUC of 96% <br><br>
+![image](https://drive.google.com/uc?export=view&id=1_Tmw8avK3bfACDpqG46GYLc6tXsPPRT2)<br><br>
+
+I also checked the feature importance by using the logistic regression model, and I find that the most important feature is the total prior appointments with a negative value which may predict more the patient who did not miss their appointments. Furthermore, the prior missed appointment with a high positive value predicts the absent patients, as shown in the figure below.<br><br>
+
+![image](https://drive.google.com/uc?export=view&id=1MXooN_H23DqSAxs0rT_3hQXNSwm5noqb)<br><br>
+**Figure 16:** feature importance in the logistic regression model.<br><br>
+
+**Advantages of using logistic regression:**<br>
+-	does not require high computation power
+-	 easy to implement.
+-	Easily interpretable.
+-	It does not require the scaling of features. Logistic regression provides a probability score for observations.
+---
+### Conclusion :
+
+In conclusion, it seems that no-shows can be predicted from patient information and appointment data. More information about the clinic’s location (e.g., transport accessibility), type of care sought (e.g., primary, specialist), and the patient (e.g., education, income) would likely improve the model. The model could also benefit from a cost-benefit analysis of possible intervention measures to achieve a balance of precision and recall that would make the most business sense.
+-	Patients with a high number of previous No-Shows are more likely to No Show in future appointments.
+-	 Appointments booked “Within 24 hours” are less likely to be No Shows as we can show from figure 7.
+-	 Patients in different age groups exhibit different No-Show behaviors, as shown in figure 3 and figure 9.
+-	 Longer waiting time, more patients will be absent from the appointments, as we can see from figure 7. So, again, this should be a point to be considered to ameliorate.
+-	The neighborhood's location may affect the patients to decide whether they show up for their medical appointments; as shown in figure 6, some neighborhoods have a high rate of absent patients.
+-	SMS could be a helpful way to remind patients of their appointments, and we can see that many patients did not receive an SMS, as we can see from figure 8.<br><br>
+
+**Recommendations to improve the attendance:**<br>
+-	 sending the SMS notification to every patient who made an appointment.
+-	Trying to make the appointment as quickly as possible, limit to less than 15 days.
+-	Call the patients who received the SMS and missed up their appointment.
+
+ **Limitation:**<br>
+-	We were given only a snapshot of complete data (from one month). Therefore, making exact predictions and analyses on snapshot data is difficult, and the analysis might not represent the actual data.
+-	The Time details in the Appointment Day were missing, which would help us predict No Show of a patient.
+-	The reason for the appointment and the consultation doctor specialization would have helped us a lot in making better analyses and predictions for the No Show of a patient.
+
+
+
+
